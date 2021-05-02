@@ -1,5 +1,4 @@
 # external apis
-print("import working...")
 class Khalti:
 
   def pay(self):
@@ -16,4 +15,3 @@ class IMEPay:
     print("Payment made using IMEPAY")
 
 
-# external apis end

@@ -1,7 +1,8 @@
 from portal_interface import KhaltiPortal, EsewaPortal, IMEPayPortal
 
+
 class PaymentPortals:
-  #contains all  of the payment portal classess
+  """contains all  of the payment portal classess"""
   payment_portals_dict = {
     "K": KhaltiPortal,
     "E": EsewaPortal,
@@ -17,7 +18,7 @@ class PaymentClass:
 
     
   def get_payment_class(self, mode):
-    #return the payment_class depending upon the mode
+    """return the payment_class depending upon the mode"""
     pay_classess = self.portal_dict.get_all_portals()
 
     if mode not in pay_classess.keys():

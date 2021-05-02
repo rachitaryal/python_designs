@@ -1,18 +1,20 @@
 #Our Interface
-from abc import ABC, abstractmethod
 import time
+from abc import ABC, abstractmethod
 from external_apis import Khalti, Esewa, IMEPay
 from sleeper_module import sleeper
 
 
 
 class PaymentPortalInterface(ABC):
+  ''' a common interface for all the payment portals '''
 
   @abstractmethod
   def pay(self):
-    #method to make payment
+    """method to make payment"""
     pass
 
+#actual implementation of the PaymentPortalInterface
 
 class KhaltiPortal(PaymentPortalInterface):
   def __init__(self):
@@ -48,4 +50,3 @@ class IMEPayPortal(PaymentPortalInterface):
     self.main.make_payment()
 
 
-#Our interface end
