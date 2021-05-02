@@ -1,3 +1,3 @@
-from run_module import run
+from dispatcher.run_module import run
 
 run()
