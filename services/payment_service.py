@@ -1,4 +1,4 @@
-from payment_portals import  PaymentClass
+from internal_apis.payment_portals import  PaymentClass
 
 class PaymentService:
 

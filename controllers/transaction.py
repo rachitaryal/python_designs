@@ -1,4 +1,4 @@
-from payment_service import PaymentService
+from services.payment_service import PaymentService
 
 
 class Transaction:

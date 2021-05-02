@@ -1,4 +1,4 @@
-from portal_interface import KhaltiPortal, EsewaPortal, IMEPayPortal
+from internal_apis.portal_interface import KhaltiPortal, EsewaPortal, IMEPayPortal
 
 
 class PaymentPortals:

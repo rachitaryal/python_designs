@@ -1,7 +1,7 @@
 #Our Interface
 import time
 from abc import ABC, abstractmethod
-from external_apis import Khalti, Esewa, IMEPay
+from external_apis.payment_api import Khalti, Esewa, IMEPay
 from sleeper_module import sleeper
 
 
