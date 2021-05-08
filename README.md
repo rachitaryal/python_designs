@@ -2,7 +2,7 @@
 
 ###### The memento pattern is a software design pattern that provides the ability to restore an object to its previous state (undo via rollback).
 
-![](images/present/3.png)
+![](images/gif/memento_pattern.gif)
 
 ## What problems can the Memento design pattern solve?
 
