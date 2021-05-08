@@ -1,6 +1,8 @@
 # Observer Pattern (Pub Sub Pattern)
-###### The observer pattern is a software design pattern in which an object, named the publisher, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods. 
 
+###### The observer pattern is a software design pattern in which an object, named the publisher, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
+
+![](https://raw.githubusercontent.com/rachitaryal/python_designs/master/images/present/2.png)
 
 ## Features
 
@@ -11,16 +13,18 @@
 Observer pattern uses two actor classes viz: Publisher and Observer. There could also be a third class which uses the above mentioned classess. But primarily we consider two class Publisher and Observers. Publisher is an object having methods to attach and detach observers to a client object. We have created an abstract class IObserver and it's concrete class implementations that is extending class IObserver.
 
 > What but design of darkness to appall?
-If design govern in a thing so small.
-— Frost Robert
+> If design govern in a thing so small.
+> — Frost Robert
 
-Now let's see how Pub Sub is implemented 
+Now let's see how Pub Sub is implemented
 
 ## Implementation
 
 #### Step 1:
+
 ###### publisher.py
-____
+
+---
 
 ```sh
 class Publisher:
@@ -41,9 +45,12 @@ class Publisher:
                 each.call()
 
 ```
+
 #### Step 2:
+
 ###### observers.py
-____
+
+---
 
 ```sh
 from abc import ABC, abstractmethod
@@ -77,9 +84,12 @@ class ObserverThird(IObserver):
 
 
 ```
-#### Step 3: 
+
+#### Step 3:
+
 ###### main.py
-____
+
+---
 
 ```sh
 from observers import ObserverFirst, ObserverSecond, ObserverThird
@@ -99,6 +109,7 @@ if __name__ == '__main__':
     p.run()
 
 ```
-### Conclusion
-###### The observer pattern is used when: the change of a state in one object must be reflected in another object without keeping the objects tight coupled. the framework we are writing needs to be enhanced in future with new observers with minimal changes.
 
+### Conclusion
+
+###### The observer pattern is used when: the change of a state in one object must be reflected in another object without keeping the objects tight coupled. the framework we are writing needs to be enhanced in future with new observers with minimal changes.
