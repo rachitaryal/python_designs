@@ -2,7 +2,7 @@
 
 ###### The observer pattern is a software design pattern in which an object, named the publisher, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
 
-![](https://raw.githubusercontent.com/rachitaryal/python_designs/master/images/present/2.png)
+![](images/gif/observer_pattern.gif)
 
 ## Features
 
