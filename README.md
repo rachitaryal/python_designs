@@ -1,1 +1,1 @@
-![](images/gif/design_pattern_1.gif)
+![](images/gif/design_pattern_2.gif)
