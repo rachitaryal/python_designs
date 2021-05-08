@@ -1,1 +1,1 @@
-![](images/gif/design_pattern.gif)
+<!-- ![](images/gif/design_pattern.gif) -->
