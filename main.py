@@ -1,36 +1,60 @@
-from measure_zero_package.measure_zero import MeasureZero
-from measure_zero_package.measure_zero_printer import MeasureZeroSize, MeasureZeroExecTime
+import functools
+from sys import getsizeof
+from time import time
 
 
-def mul(ls=[]):
-    r_ls = [x * x for x in ls if ls]
-    return r_ls
+def time_it(fn):
+    """
+        returns the (data, time) tuple
+        data is the actual data returned by the function
+        time is the execution time for the function
+    """
+
+    @functools.wraps(fn)
+    def wrapper(*args, **kwargs):
+        begin = time()
+        data = fn(*args, **kwargs)
+        end = time()
+        exec_time = end - begin
+        print(f"Function '{fn.__name__}()' took {exec_time} secs to execute.")
+        return data, exec_time
+
+    return wrapper
 
 
-def mul2(ls=[]):
-    r_ls = (x * x for x in ls if ls)
-    return r_ls
+def size_it(fn):
+    """
+        returns the (data, size) tuple
+        data is the actual data returned by the function
+        size is the bytes size returned by the function
+    """
+
+    @functools.wraps(fn)
+    def wrapper(*args, **kwargs):
+        data = fn(*args, **kwargs)
+        size = getsizeof(data)
+        print(f"Function '{fn.__name__}()' returns {size} bytes of data.")
+        return data, size
+
+    return wrapper
 
 
-my_lst = []
+def sajau(fn):
+    @functools.wraps(fn)
+    def wrapper(*args, **kwargs):
+        print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+        fn(*args, **kwargs)
+        print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
-for i in range(100000):
-    my_lst.append(i)
-
-
-# MeasureZero(mul, my_lst).measure_size()
-# MeasureZero(mul, my_lst).measure_exec_time()
-
-def test():
-    val = []
-    for x in range(10000000):
-        val.append(x)
+    return wrapper
 
 
-# MeasureZeroExecTime(mul, my_lst).measure()
-# MeasureZeroSize(mul, my_lst).measure()
+
+@sajau
+@time_it
+# @size_it
+def test(a, b, c):
+    return [x for x in range(100000)]
 
 
-methods_lst = [(mul, my_lst), (mul2, my_lst), (test,)]
-
-MeasureZero(tup_lst=methods_lst, cls=[MeasureZeroExecTime, MeasureZeroSize])
+test(1, 2, 3)

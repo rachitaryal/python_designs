@@ -1,2 +1,0 @@
-class TupleListError(Exception):
-    pass
